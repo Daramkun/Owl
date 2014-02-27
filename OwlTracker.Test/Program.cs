@@ -32,6 +32,10 @@ namespace OwlTracker.Test
 			Console.WriteLine ( "==== 로젠택배 ====" );
 			foreach ( EndPoint ep in await Tracker.Tracking ( new TrackingItem () { ItemNumber = "97543184432", ParserName = "로젠택배" } ) )
 				Console.WriteLine ( "{0} {1}({2}) {3}", ep.Terminal, ep.State, ep.OriginalState, ep.ArrivalTime );
+
+			Console.WriteLine ( "==== KG옐로우캡 ====" );
+			foreach ( EndPoint ep in await Tracker.Tracking ( new TrackingItem () { ItemNumber = "53450235090", ParserName = "KG옐로우캡" } ) )
+				Console.WriteLine ( "{0} {1}({2}) {3}", ep.Terminal, ep.State, ep.OriginalState, ep.ArrivalTime );
 		}
 
 		static void Main ( string [] args )
@@ -41,6 +45,7 @@ namespace OwlTracker.Test
 			Tracker.AddTrackingParser ( new DongbuExpressParser () );
 			Tracker.AddTrackingParser ( new EpostParser () );
 			Tracker.AddTrackingParser ( new LogenTaekbaeParser () );
+			Tracker.AddTrackingParser ( new KGYellowCapParser () );
 			Test ();
 			while ( Console.ReadKey ( true ).Key == ConsoleKey.Zoom ) ;
 		}

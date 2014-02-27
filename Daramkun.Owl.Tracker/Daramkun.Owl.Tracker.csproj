@@ -39,6 +39,7 @@
     <Compile Include="Parsers\DongbuExpressParser.cs" />
     <Compile Include="Parsers\EpostParser.cs" />
     <Compile Include="Parsers\HyundaeTaekbaeParser.cs" />
+    <Compile Include="Parsers\KGYellowCapParser.cs" />
     <Compile Include="Parsers\LogenTaekbaeParser.cs" />
     <Compile Include="Tracker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
