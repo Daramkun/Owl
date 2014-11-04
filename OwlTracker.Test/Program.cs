@@ -14,9 +14,10 @@ namespace OwlTracker.Test
 		static async void Test ()
 		{
 			Console.WriteLine ( "==== CJ대한통운 ====" );
-			foreach ( EndPoint ep in await Tracker.Tracking ( new TrackingItem () { ItemNumber = "682085426840", ParserName = "CJ대한통운" } ) )
+			foreach ( EndPoint ep in await Tracker.Tracking ( new TrackingItem () { ItemNumber = "684948034991", ParserName = "CJ대한통운" } ) )
 				Console.WriteLine ( "{0} {1}({2}) {3}", ep.Terminal, ep.State, ep.OriginalState, ep.ArrivalTime );
 
+			/* This test has not running with my Delivery number */
 			Console.WriteLine ( "==== 현대택배 ====" );
 			foreach ( EndPoint ep in await Tracker.Tracking ( new TrackingItem () { ItemNumber = "302202197054", ParserName = "현대택배" } ) )
 				Console.WriteLine ( "{0} {1}({2}) {3}", ep.Terminal, ep.State, ep.OriginalState, ep.ArrivalTime );
